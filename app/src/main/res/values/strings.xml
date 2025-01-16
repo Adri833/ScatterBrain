@@ -2,5 +2,18 @@
     <string name="app_name">ScatterBrain</string>
 
     <!-- Pagina de Idiomas -->
-    <string name="seleccionar_idioma">Seleccionar idioma</string>
+    <string name="seleccionar_idioma">Seleccionar idioma y dificultad</string>
+
+    <string-array name="idiomas">
+        <item>Español</item>
+        <item>Inglés</item>
+        <item>Italiano</item>
+    </string-array>
+
+    <string-array name="dificultades">
+        <item>Fácil</item>
+        <item>Normal</item>
+        <item>Difícil</item>
+    </string-array>
+
 </resources>
