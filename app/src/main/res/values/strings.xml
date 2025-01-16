@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">ScatterBrain</string>
 
-    <!-- Pagina de Idiomas -->
-    <string name="seleccionar_idioma">Seleccionar idioma y dificultad</string>
-
+    <!-- Pagina de Ajustes -->
+    <string name="idioma">IDIOMA</string>
+    <string name="dificultad">DIFICULTAD</string>
+    <string name="oscuro">OSCURO</string>
+    <string name="jugar">JUGAR</string>
     <string-array name="idiomas">
         <item>Español</item>
         <item>Inglés</item>
