@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#800080"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="383dp"
+        android:layout_height="207dp"
+        android:layout_marginBottom="50dp"
+        android:contentDescription="@string/logo_description"
+        android:src="@drawable/logo_scatterbrain" />
+
+    <!-- Botón Iniciar Sesión -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="277dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#FF0080"
+        android:fontFamily="sans-serif"
+        android:text="@string/btn_login"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <!-- Botón Registrarse -->
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="276dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#FF0080"
+        android:fontFamily="sans-serif"
+        android:text="@string/btn_register"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <!-- Botón de google -->
+    <Button
+        android:id="@+id/btnGoogleLogin"
+        android:layout_width="270dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#000000"
+        android:drawableLeft="@drawable/logo"
+        android:fontFamily="sans-serif"
+        android:iconTint="@null"
+        android:padding="15dp"
+        android:text="@string/btn_google_login"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+
+
+</LinearLayout>

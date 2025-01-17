@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Scatterbrain</string>
+    <string name="btn_login">Log In</string>
+    <string name="btn_register">Sign Up</string>
+    <string name="btn_google_login">Log In with Google</string>
+    <string name="logo_description">Scatterbrain Logo</string>
+</resources>
