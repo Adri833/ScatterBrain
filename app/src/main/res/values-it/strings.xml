@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ScatterBrain</string>
+    <string name="btn_login">Accedi</string>
+    <string name="btn_register">Registrati</string>
+    <string name="btn_google_login">Accedi con Google</string>
+    <string name="logo_description">Logo di Scatterbrain</string>
+
+    <!-- Pagina delle Impostazioni -->
+    <string name="idioma">LINGUA</string>
+    <string name="dificultad">DIFFICOLTÀ</string>
+    <string name="oscuro">MODALITÀ OSCURA</string>
+    <string name="jugar">GIOCARE</string>
+
+    <string-array name="idiomas">
+        <item>Spagnolo</item>
+        <item>Inglese</item>
+        <item>Italiano</item>
+    </string-array>
+
+    <string-array name="dificultades">
+        <item>Facile</item>
+        <item>Normale</item>
+        <item>Difficile</item>
+    </string-array>
+</resources>

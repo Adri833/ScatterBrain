@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="logoImage" type="id" />
+    <item name="btnLogin" type="id" />
+    <item name="btnRegister" type="id" />
+</resources>
