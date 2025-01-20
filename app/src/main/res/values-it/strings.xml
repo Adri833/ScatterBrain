@@ -1,9 +1,13 @@
 <resources>
+
     <string name="app_name">ScatterBrain</string>
     <string name="btn_login">Accedi</string>
     <string name="btn_register">Registrati</string>
     <string name="btn_google_login">Accedi con Google</string>
     <string name="logo_description">Logo di Scatterbrain</string>
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 
     <!-- Pagina delle Impostazioni -->
     <string name="idioma">LINGUA</string>
