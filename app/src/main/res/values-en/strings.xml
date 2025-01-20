@@ -1,9 +1,14 @@
 <resources>
+    <!-- Main Page -->
     <string name="app_name">ScatterBrain</string>
     <string name="btn_login">Log In</string>
     <string name="btn_register">Register</string>
     <string name="btn_google_login">Log In with Google</string>
     <string name="logo_description">Scatterbrain Logo</string>
+
+    <!-- Email Page -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 
     <!-- Settings Page -->
     <string name="idioma">LANGUAGE</string>
