@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1037173707313",
+    "project_id": "scatterbrain-a3341",
+    "storage_bucket": "scatterbrain-a3341.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037173707313:android:037bfb6fbe2be2a25d7b10",
+        "android_client_info": {
+          "package_name": "es.thatapps.scatterbrain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037173707313-31o34n49p52opu58uqd67s88ekrdaarp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "es.thatapps.scatterbrain",
+            "certificate_hash": "5990f9858fa2d0e2bd9c0d5cf22ed1e9b35e7c85"
+          }
+        },
+        {
+          "client_id": "1037173707313-2uhpflo0e8fm0h1rq4bdr3d1ebooq1m4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe4-l8JF8QOb73-s_y8iIcFHSYtpzx8TU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037173707313-2uhpflo0e8fm0h1rq4bdr3d1ebooq1m4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
