@@ -8,6 +8,7 @@
     tools:context=".LoginActivity">
 
     <!-- Logo -->
+
     <ImageView
         android:id="@+id/logoImage"
         android:layout_width="0dp"
