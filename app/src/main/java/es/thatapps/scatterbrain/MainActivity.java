@@ -41,15 +41,20 @@ public class MainActivity extends AppCompatActivity {
         Button btnRegister = findViewById(R.id.btnRegister);
 
         // Acciones para los botones
-        btnLogin.setOnClickListener(view -> {
-            // Acción de Iniciar Sesión
-            Toast.makeText(MainActivity.this, "Iniciar Sesión", Toast.LENGTH_SHORT).show();
-        });
+        btnLogin.setOnClickListener(view -> navigateToLogin());
 
-        btnRegister.setOnClickListener(view -> {
-            // Acción de Registrarse
-            Toast.makeText(MainActivity.this, "Registrarse", Toast.LENGTH_SHORT).show();
-        });
+        btnRegister.setOnClickListener(view -> navigateToRegister());
+
+    }
+
+    private void navigateToLogin() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    private void navigateToRegister() {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 
     private void signInWithGoogle() {
