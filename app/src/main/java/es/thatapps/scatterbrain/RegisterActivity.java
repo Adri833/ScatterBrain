@@ -1,33 +1,26 @@
 package es.thatapps.scatterbrain;
 
-import static android.content.ContentValues.TAG;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegisterActivity extends AppCompatActivity {
+import es.thatapps.scatterbrain.repository.AuthRepository;
 
-    private FirebaseAuth mAuth;
+public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        // Inicializar firebase Auth
-        mAuth = FirebaseAuth.getInstance();
+        // Clases
+        AuthRepository authRepository = new AuthRepository(this);
 
         // Elementos de a UI
         EditText etEmail = findViewById(R.id.etEmail);
@@ -53,7 +46,9 @@ public class RegisterActivity extends AppCompatActivity {
 
             // Validar los inputs
             if (validateInputs(email, password)) {
-                loginWithEmailPassword(email, password);
+                authRepository.createNewUser(email, password, () -> {
+                    // TODO: funcion de navegacion hacia la pantalla home
+                });
             }
         });
     }
@@ -89,21 +84,5 @@ public class RegisterActivity extends AppCompatActivity {
         Pattern pattern = Pattern.compile(emailPattern);
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
-    }
-
-    private void loginWithEmailPassword(String email, String password) {
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        // Login exitoso
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        Toast.makeText(RegisterActivity.this, "Registro exitoso! Bienvenido, " + Objects.requireNonNull(user).getEmail(), Toast.LENGTH_SHORT).show();
-                    } else {
-                        // Error en el inicio de sesión
-                        Log.w(TAG, "signInWithEmail:failure", task.getException());
-                        Toast.makeText(RegisterActivity.this, "Error al iniciar sesión. " + Objects.requireNonNull(task.getException()).getMessage(),
-                                Toast.LENGTH_LONG).show();
-                    }
-                });
     }
 }
