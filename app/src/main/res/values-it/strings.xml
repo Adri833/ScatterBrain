@@ -8,6 +8,18 @@
 
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="camp_required">È necessario compilare tutti i campi</string>
+    <string name="invalid_email">Email non valida</string>
+    <string name="password_length">La password deve contenere almeno 6 caratteri</string>
+    <string name="register_success">Registrazione riuscita! Benvenuto</string>
+    <string name="register_error">Si sono verificati degli errori durante la registrazione</string>
+    <string name="login_success">Benvenuto</string>
+    <string name="login_error">Si sono verificati degli errori durante laccesso</string>
+
+    <!-- Pagina iniziale -->
+    <string name="create_room">Crea stanza</string>
+    <string name="join_room">Entra in una stanza</string>
+    <string name="play">Gioca</string>
 
     <!-- Pagina delle Impostazioni -->
     <string name="idioma">LINGUA</string>

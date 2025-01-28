@@ -9,6 +9,18 @@
     <!-- Email Page -->
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="camp_required">All fields must be filled</string>
+    <string name="invalid_email">Invalid email</string>
+    <string name="password_length">The password must be at least 6 characters long</string>
+    <string name="register_success">Registration successful! Welcome</string>
+    <string name="register_error">An error occurred in the registration</string>
+    <string name="login_success">Welcome</string>
+    <string name="login_error">An error occurred when login</string>
+
+    <!-- Home page -->
+    <string name="create_room">Create room</string>
+    <string name="join_room">Join room</string>
+    <string name="play">Play</string>
 
     <!-- Settings Page -->
     <string name="idioma">LANGUAGE</string>

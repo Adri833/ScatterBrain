@@ -9,6 +9,18 @@
     <!-- Pagina de email -->
     <string name="email">Correo</string>
     <string name="password">Contraseña</string>
+    <string name="camp_required">Es necesario rellenar todos los campos</string>
+    <string name="invalid_email">Correo no valido</string>
+    <string name="password_length">La contraseña debe tener al menos 6 caracteres</string>
+    <string name="register_success">Registro exitoso! Bienvenido</string>
+    <string name="register_error">Ha ocurrido un error en el registro</string>
+    <string name="login_success">Bienvenido</string>
+    <string name="login_error">Ha ocurrido un error en el inicio de sesión</string>
+
+    <!-- Pagina Home -->
+    <string name="create_room">Crear sala</string>
+    <string name="join_room">Unirse a una sala</string>
+    <string name="play">Jugar</string>
 
     <!-- Pagina de Ajustes -->
     <string name="idioma">IDIOMA</string>
