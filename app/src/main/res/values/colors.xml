@@ -7,4 +7,7 @@
     <color name="pink">#C502A1</color>
     <color name="dark_pink">#5B024B</color>
     <color name="dark_pink45">#735B024B</color>
+
+    <!-- Naranja -->
+    <color name="orange">#F6A31F</color>
 </resources>
