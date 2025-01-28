@@ -6,8 +6,16 @@
     <!-- Rosa -->
     <color name="pink">#C502A1</color>
     <color name="dark_pink">#5B024B</color>
+    <string name="dark_pink11" translatable="false">#5F014D</string>
     <color name="dark_pink45">#735B024B</color>
 
     <!-- Naranja -->
     <color name="orange">#F6A31F</color>
+
+    <!-- Amarillo -->
+    <color name="yellow">#FFE022</color>
+
+    <!-- Azul -->
+    <color name="blue" translatable="false">#288ECF</color>
+
 </resources>

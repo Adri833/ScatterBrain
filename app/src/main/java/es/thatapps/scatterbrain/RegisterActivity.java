@@ -1,5 +1,6 @@
 package es.thatapps.scatterbrain;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
@@ -46,32 +47,32 @@ public class RegisterActivity extends AppCompatActivity {
 
             // Validar los inputs
             if (validateInputs(email, password)) {
-                authRepository.createNewUser(email, password, () -> {
-                    // TODO: funcion de navegacion hacia la pantalla home
-                });
+                authRepository.createNewUser(email, password, this::navigateToHome);
             }
         });
+    }
+
+    // Navegaciones
+    private void navigateToHome() {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
     }
 
     // Método de validación de los inputs
     private boolean validateInputs(String email, String password) {
         // Validar email
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(RegisterActivity.this, "El email es necesario", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if (!isValidEmail(email)) {
-            Toast.makeText(RegisterActivity.this, "Ingresa un email válido por favor", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+            Toast.makeText(RegisterActivity.this, R.string.camp_required, Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        // Validar contraseña
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(RegisterActivity.this, "La contraseña es necesaria", Toast.LENGTH_SHORT).show();
+        if (!isValidEmail(email)) {
+            Toast.makeText(RegisterActivity.this, R.string.invalid_email, Toast.LENGTH_SHORT).show();
             return false;
         }
+
         if (password.length() < 6) {
-            Toast.makeText(RegisterActivity.this, "La contraseña debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterActivity.this, R.string.password_length, Toast.LENGTH_SHORT).show();
             return false;
         }
 

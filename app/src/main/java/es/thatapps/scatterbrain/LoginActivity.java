@@ -1,6 +1,8 @@
 package es.thatapps.scatterbrain;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -8,21 +10,20 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import java.util.Objects;
+import es.thatapps.scatterbrain.repository.AuthRepository;
 
 public class LoginActivity extends AppCompatActivity {
-
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Inicializar FirebaseAuth
-        mAuth = FirebaseAuth.getInstance();
+        //Clases
+        AuthRepository authRepository = new AuthRepository(this);
 
         // Referencias a los campos de texto y los íconos de borrar
         EditText etEmail = findViewById(R.id.etEmail);
@@ -43,22 +44,45 @@ public class LoginActivity extends AppCompatActivity {
             String password = etPassword.getText().toString().trim();
 
             // Validar entradas antes de iniciar sesión
-            if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(LoginActivity.this, "Por favor, complete todos los campos.", Toast.LENGTH_SHORT).show();
-                return;
+            if (validateInputs(email, password)) {
+                authRepository.signInWithEmail(email, password, this::navigateToHome);
             }
-
-            // Iniciar sesión con Firebase Authentication
-            mAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, task -> {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
-                            // TODO navegacion hacia la pantalla home
-                        } else {
-                            Toast.makeText(LoginActivity.this, "Error al iniciar sesión. " + Objects.requireNonNull(task.getException()).getMessage(),
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    });
         });
     }
+
+    // Navegaciones
+    private void navigateToHome() {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+
+    // Método de validación de los inputs
+    private boolean validateInputs(String email, String password) {
+        // Validar email
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+            Toast.makeText(LoginActivity.this, R.string.camp_required, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (!isValidEmail(email)) {
+            Toast.makeText(LoginActivity.this, R.string.invalid_email, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (password.length() < 6) {
+            Toast.makeText(LoginActivity.this, R.string.password_length, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
+    }
+
+    // Método para validar el formato del email
+    private boolean isValidEmail(String email) {
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.[a-z]+";
+        Pattern pattern = Pattern.compile(emailPattern);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
 }
