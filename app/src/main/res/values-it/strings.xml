@@ -20,6 +20,8 @@
     <string name="create_room">Crea stanza</string>
     <string name="join_room">Entra in una stanza</string>
     <string name="play">Gioca</string>
+    <string name="username">Nome utente</string>
+    <string name="room_code">Codice della stanza</string>
 
     <!-- Pagina delle Impostazioni -->
     <string name="idioma">LINGUA</string>

@@ -19,8 +19,10 @@
 
     <!-- Pagina Home -->
     <string name="create_room">Crear sala</string>
-    <string name="join_room">Unirse a una sala</string>
+    <string name="join_room">Unirse a sala</string>
     <string name="play">Jugar</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="room_code">Codigo de la sala</string>
 
     <!-- Pagina de Ajustes -->
     <string name="idioma">IDIOMA</string>
