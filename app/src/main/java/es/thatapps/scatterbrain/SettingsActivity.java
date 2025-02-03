@@ -1,9 +1,11 @@
 package es.thatapps.scatterbrain;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -13,6 +15,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import es.thatapps.scatterbrain.cliente.Jugador;
+import es.thatapps.scatterbrain.servidor.Server;
+
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
@@ -20,11 +25,30 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_settings);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.settings), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Elementos de la UI
+        Button buttonJugar = findViewById(R.id.buttonJugar);
+
+        buttonJugar.setOnClickListener(v -> {
+            // Iniciar el servidor en un hilo
+            new Thread(() -> {
+                Server server = new Server();
+                server.abrirServidor();
+            }).start();
+
+            // Conectar el cliente a su propio servidor
+            Jugador jugador = new Jugador();
+            jugador.conectar();
+
+            runOnUiThread(() -> navigateToGame());
+        });
+
+        // Configurar los spinners
         setupSpinnerIdiomas();
         setupFlag();
         setupSpinnerDificultad();
@@ -116,5 +140,13 @@ public class SettingsActivity extends AppCompatActivity {
                 R.array.dificultades, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerDificultades.setAdapter(adapter);
+    }
+
+    private void navigateToGame() {
+        String codigoSala = Server.generarCodigoSala();
+
+        Intent intent = new Intent(this, GameActivity.class);
+        intent.putExtra("CODIGO_SALA", codigoSala);
+        startActivity(intent);
     }
 }
