@@ -12,12 +12,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
+import es.thatapps.scatterbrain.data.ScatterFinals;
+
 public class Server {
 
-    private static final int NUM_MAX_JUGADORES = 4;
-    private static final int PUERTO = 53296;
     private ArrayList<Socket> socketClientes;
-    private static Semaphore semaphore = new Semaphore(NUM_MAX_JUGADORES);
+    private static Semaphore semaphore = new Semaphore(ScatterFinals.NUM_MAX_JUGADORES);
     private static List<ClientHandler> players = Collections.synchronizedList(new ArrayList<>());
 
     // Metodo para generar un codigo de sala aleatorio
@@ -29,8 +29,8 @@ public class Server {
 
 
     public void abrirServidor() {
-        try (ServerSocket serverSocket = new ServerSocket(PUERTO,50, InetAddress.getByName("0.0.0.0"))) {
-            System.out.println("Servidor abierto en el puerto " + PUERTO);
+        try (ServerSocket serverSocket = new ServerSocket(ScatterFinals.SERVER_PORT,50, InetAddress.getByName("0.0.0.0"))) {
+            System.out.println("Servidor abierto en el puerto " + ScatterFinals.SERVER_PORT);
 
             // Acepta la conexion de jugadores
             while (true) {
@@ -52,7 +52,7 @@ public class Server {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Hubo un problema al abrir el servidor: " + e.getMessage());
         }
     }
 
@@ -83,7 +83,7 @@ public class Server {
 
                 // El servidor aceptara al jugador si hay espacio en la sala
                 if (message.equals("Solicitud de union a la sala")) {
-                    if (players.size() <= NUM_MAX_JUGADORES) {
+                    if (players.size() <= ScatterFinals.NUM_MAX_JUGADORES) {
                         dout.writeUTF("Solicitud aceptada");
                     } else {
                         dout.writeUTF("Sala llena");
@@ -93,16 +93,6 @@ public class Server {
 
             } catch (IOException e) {
                 e.printStackTrace();
-            } finally {
-                try {
-                    // Liberar un espacio de semaphore cada vez que un jugador se desconecta
-                    clientSocket.close();
-                    semaphore.release();
-                    players.remove(this);
-                    System.out.println("Jugador desconectado");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         }
     }
