@@ -2,6 +2,7 @@ package es.thatapps.scatterbrain;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,6 +20,8 @@ import es.thatapps.scatterbrain.cliente.Jugador;
 import es.thatapps.scatterbrain.servidor.Server;
 
 public class SettingsActivity extends AppCompatActivity {
+
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,7 @@ public class SettingsActivity extends AppCompatActivity {
             }).start();
 
             // Conectar el cliente a su propio servidor
-            Jugador jugador = new Jugador();
+            Jugador jugador = new Jugador(handler);
             jugador.conectar();
 
             runOnUiThread(() -> navigateToGame());
