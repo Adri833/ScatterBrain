@@ -1,0 +1,43 @@
+<resources>
+
+    <string name="app_name">ScatterBrain</string>
+    <string name="btn_login">Accedi</string>
+    <string name="btn_register">Registrati</string>
+    <string name="btn_google_login">Accedi con Google</string>
+    <string name="logo_description">Logo di Scatterbrain</string>
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="camp_required">È necessario compilare tutti i campi</string>
+    <string name="invalid_email">Email non valida</string>
+    <string name="password_length">La password deve contenere almeno 6 caratteri</string>
+    <string name="register_success">Registrazione riuscita! Benvenuto</string>
+    <string name="register_error">Si sono verificati degli errori durante la registrazione</string>
+    <string name="login_success">Benvenuto</string>
+    <string name="login_error">Si sono verificati degli errori durante laccesso</string>
+
+    <!-- Pagina iniziale -->
+    <string name="create_room">Crea stanza</string>
+    <string name="join_room">Entra in una stanza</string>
+    <string name="play">Gioca</string>
+    <string name="username">Nome utente</string>
+    <string name="room_code">Codice della stanza</string>
+
+    <!-- Pagina delle Impostazioni -->
+    <string name="idioma">LINGUA</string>
+    <string name="dificultad">DIFFICOLTÀ</string>
+    <string name="oscuro">MODALITÀ OSCURA</string>
+    <string name="jugar">GIOCARE</string>
+
+    <string-array name="idiomas">
+        <item>Spagnolo</item>
+        <item>Inglese</item>
+        <item>Italiano</item>
+    </string-array>
+
+    <string-array name="dificultades">
+        <item>Facile</item>
+        <item>Normale</item>
+        <item>Difficile</item>
+    </string-array>
+</resources>

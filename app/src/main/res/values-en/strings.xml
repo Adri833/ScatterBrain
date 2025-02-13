@@ -1,0 +1,44 @@
+<resources>
+    <!-- Main Page -->
+    <string name="app_name">ScatterBrain</string>
+    <string name="btn_login">Log In</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_google_login">Log In with Google</string>
+    <string name="logo_description">Scatterbrain Logo</string>
+
+    <!-- Email Page -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="camp_required">All fields must be filled</string>
+    <string name="invalid_email">Invalid email</string>
+    <string name="password_length">The password must be at least 6 characters long</string>
+    <string name="register_success">Registration successful! Welcome</string>
+    <string name="register_error">An error occurred in the registration</string>
+    <string name="login_success">Welcome</string>
+    <string name="login_error">An error occurred when login</string>
+
+    <!-- Home page -->
+    <string name="create_room">Create room</string>
+    <string name="join_room">Join room</string>
+    <string name="play">Play</string>
+    <string name="username">Username</string>
+    <string name="room_code">Room code</string>
+
+    <!-- Settings Page -->
+    <string name="idioma">LANGUAGE</string>
+    <string name="dificultad">DIFFICULTY</string>
+    <string name="oscuro">DARK MODE</string>
+    <string name="jugar">PLAY</string>
+
+    <string-array name="idiomas">
+        <item>Spanish</item>
+        <item>English</item>
+        <item>Italian</item>
+    </string-array>
+
+    <string-array name="dificultades">
+        <item>Easy</item>
+        <item>Normal</item>
+        <item>Hard</item>
+    </string-array>
+</resources>

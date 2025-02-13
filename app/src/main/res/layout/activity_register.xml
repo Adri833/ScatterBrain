@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_pink"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="84dp"
+        android:contentDescription="@string/logo_description"
+        android:src="@drawable/logo_scatterbrain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <!-- Campo de texto: Contraseña -->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etEmail"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:paddingStart="20dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoImage" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etPassword"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/edit_text_background"
+        android:drawableTint="#000000"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingStart="20dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+    <!-- Botón Iniciar Sesión con el icondelete -->
+    <!--Icono de borrar-->
+
+    <!--Icono de borrar pra la contraseña-->
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/orange"
+        android:text="@string/btn_register"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPassword"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <ImageView
+        android:id="@+id/iconDeleteEmail"
+        android:layout_width="35dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_borrar"
+        app:layout_constraintBottom_toBottomOf="@+id/etEmail"
+        app:layout_constraintEnd_toEndOf="@+id/etEmail"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHorizontal_bias="0.969"
+        app:layout_constraintStart_toStartOf="@+id/etEmail"
+        app:layout_constraintTop_toTopOf="@+id/etEmail"
+        app:layout_constraintWidth_percent="0.1" />
+
+    <ImageView
+        android:id="@+id/iconDeletePassword"
+        android:layout_width="35dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_borrar"
+        app:layout_constraintBottom_toBottomOf="@+id/etPassword"
+        app:layout_constraintEnd_toEndOf="@+id/etPassword"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintStart_toStartOf="@+id/etPassword"
+        app:layout_constraintTop_toTopOf="@+id/etPassword"
+        app:layout_constraintWidth_percent="0.1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
